@@ -1,0 +1,11 @@
+bibentry(
+  bibtype = "Manual",
+  title   = "Clonal Selection Indices Using Genotypic Values",
+  author  = c(
+    person("Sónia", "Surgy"),
+    person("Jorge", "Cadima"),
+    person("Elsa", "Gonçalves")
+  ),
+  year    = 2026,
+  note    = "R package version 1.0.0"
+)
