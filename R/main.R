@@ -12,7 +12,7 @@
 #' @param data A data frame comprising the input data consisting of the EBLUPs of genetic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.
 #'
 #' @return
-#' A list with the following components:
+#' A list with the following objects:
 #'  - `ranking`  with the top 'clnum' clones in the index mentioned in 'indextype' and the corresponding index value
 #'  - `rankall`  with the top 'clnum' clones in all indices and the corresponding index value
 #'  - `rankglobal` with index value and rank position for each clone in all indices
