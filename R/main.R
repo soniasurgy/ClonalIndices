@@ -9,7 +9,7 @@
 #' @param meanvec A named numeric vector of trait means; if omitted, data are assumed to be already normalized by the mean. Not used for 'esi'.
 #' @param criteria A named numeric vector indicating the selection criterion for each trait: 1 for traits to be increased, -1 for traits to be decreased. If omitted, all traits are assumed to be selected for increase.
 #' @param indextype A string indicating the selection index to be calculated. 'bsi' for Balanced selection index, 'ssi' for the Adapted Smith selection index, 'msi' for the Adapted Mulamba & Mock selection index, or 'esi' for the Adapted Elston selection index . If omitted, 'bsi' is calculated. For more information about these indices see 'README' file.
-#' @param data A data frame comprising the input data consisting of the EBLUPs of genetic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.
+#' @param data A data frame comprising the input data consisting of the EBLUPs of genotypic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.
 #'
 #' @return
 #' A list with the following objects:
