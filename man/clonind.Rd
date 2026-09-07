@@ -11,7 +11,7 @@ clonind(
   clnum = NULL,
   meanvec = NULL,
   criteria = NULL,
-  indextype = c("bsi", "ssi", "esi", "msi"),
+  indextype = c("bsi", "mbsi", "ssi", "esi", "msi"),
   data
 )
 }
@@ -30,10 +30,10 @@ clonind(
 
 \item{indextype}{A string indicating the selection index to be calculated. 'bsi' for Balanced selection index, 'ssi' for the Adapted Smith selection index, 'msi' for the Adapted Mulamba & Mock selection index, or 'esi' for the Adapted Elston selection index . If omitted, 'bsi' is calculated. For more information about these indices see 'README' file.}
 
-\item{data}{A data frame comprising the input data consisting of the EBLUPs of genetic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.}
+\item{data}{A data frame comprising the input data consisting of the EBLUPs of genotypic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.}
 }
 \value{
-A list with the following components:
+A list with the following objects:
 \itemize{
 \item \code{ranking}  with the top 'clnum' clones in the index mentioned in 'indextype' and the corresponding index value
 \item \code{rankall}  with the top 'clnum' clones in all indices and the corresponding index value

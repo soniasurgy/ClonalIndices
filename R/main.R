@@ -2,7 +2,7 @@
 #'
 #' This function implements the following indices: BSI, SSI, ESI and MSI
 #'
-#' @param blups A vector with the names of the columns in the data corresponding to the predictors of the target traits. Needed for 'indextype' 'bsi', 'ssi' and 'msi'.
+#' @param blups A vector with the names of the columns in the data corresponding to the predictors of the target traits. Needed for 'indextype' 'bsi', 'mbsi', 'ssi' and 'msi'.
 #' @param preds A vector with the names of the columns in the data corresponding to the predicted values of the target traits. Needed for 'indextype' 'esi'.
 #' @param ref Name of the reference column used to identify individual clones (e.g., clone ID). Defaults to the first column.
 #' @param clnum An integer specifying the number of top clones to be seen in the output. If omitted, equal to the total number of clones.
@@ -37,7 +37,7 @@
 #' exemp
 #' exemp$rankall
 #' exemp$rankglobal
-clonind <- function(blups = NULL, preds = NULL, ref = NULL, clnum = NULL, meanvec = NULL, criteria = NULL, indextype = c("bsi", "ssi", "esi", "msi"), data){
+clonind <- function(blups = NULL, preds = NULL, ref = NULL, clnum = NULL, meanvec = NULL, criteria = NULL, indextype = c("bsi", "mbsi", "ssi", "esi", "msi"), data){
 
 
 indextype <- match.arg(indextype)
@@ -112,6 +112,40 @@ indextype <- match.arg(indextype)
     indexglobal <- data.frame(Genotype = data[,1])
     indexglobal$BSI = indexbsi$BSI
     indexglobal$BSIrank = indexbsi$BSIrank
+
+
+    # MBSI
+    indexmbsi <- index
+    mbsicols <- ncol(indexmbsi)
+    indexmbsi$numer <- rep(1, indexrow)
+    indexmbsi$denom <- rep(1, indexrow)
+    
+    for (i in 1:indexrow){  
+      for (j in 2:mbsicols){
+        
+        valor <- indexmbsi[[j]][i]
+        
+        if (valor >= 0){
+          indexmbsi$numer[i] <- indexmbsi$numer[i] * (abs(valor)+1)
+        }else{
+          indexmbsi$denom[i] <- indexmbsi$denom[i] * (abs(valor)+1)
+        }
+      }
+    }
+    indexmbsi$MBSI <- indexmbsi$numer/indexmbsi$denom
+    indexmbsi$MBSIrank <- rank(-indexmbsi$MBSI, ties.method = "first")
+    indexordmbsi <- indexmbsi[order(indexmbsi$MBSI, decreasing = TRUE),, drop = FALSE]
+    
+    # Object all
+
+    indexall$Ref.MBSI <- indexordmbsi[1:clnum, 1]
+    indexall$MBSI <- indexordmbsi$MBSI[1:clnum]
+    
+    # object global
+    
+    indexglobal$MBSI = indexmbsi$MBSI
+    indexglobal$MBSIrank = indexmbsi$MBSIrank
+    
 
 
   # SSI
@@ -200,6 +234,10 @@ indextype <- match.arg(indextype)
     # Resultados individuais
     if (indextype == "bsi"){
       indexsi <- data.frame(Ref = indexall$Ref.BSI, BSI = indexall$BSI)
+    }
+
+    if (indextype == "mbsi"){
+      indexsi <- data.frame(Ref = indexall$Ref.MBSI, MBSI = indexall$MBSI)
     }
 
     if (indextype == "ssi"){
