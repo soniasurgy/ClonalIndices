@@ -14,20 +14,11 @@ The package implements one newly developed index and several adaptations
 of existing selection indices for use with genotypic data. The indices are a newly Balanced selection index (BSI), a newly Multiplicative Balanced selection index (MBSI)an Adapted Smith selection index (SSI), an Adapted Mulamba & Mock selection index (MSI), and an Adapted Elston selection index (ESI). For more information about these indices see 'README' file.
 
 #' @references
-Smith, H. F. (1936). A discriminant function for plant selection.
-Annals of Eugenics, 7, 240-250.
+Elston, R., 1963. A weight-free index for the purpose of ranking or selection with respect to several traits at a time. Biometrics, Volume 19, pp. 85-97.
 
-Hazel, L. N. (1943). The genetic basis for constructing selection
-indexes. Genetics, 28, 476-490.
+Mulamba, N. N. and Mock, J., 1978. Improvement of yield potential of the ETO blanco maize (Zea mays L.) population by breeding for plant traits. Egyptian Journal of Genetics and Cytology, Volume 7, pp. 40-57.
 
-Mulamba, N. N., & Mock, J. J. (1978). Improvement of yield
-potential of the ETO blanco maize (Zea mays L.) population
-by breeding for plant traits. Egyptian Journal of Genetics
-and Cytology, 7, 40-51.
-
-Elston, R. C. (1963). A weight-free index for the purpose of
-ranking or selection with respect to several traits at a time.
-Biometrics, 19(1), 85-97.
+Smith, H., 1936. A discriminant function for plant selection. Ann. Eugen, Volume 7, pp. 240-250.
 }
 \seealso{
 Useful links:
@@ -37,12 +28,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sónia Surgy \email{soniasurgy@isa.ulisboa.pt}
+\strong{Maintainer}: S<U+00F3>nia Surgy \email{soniasurgy@isa.ulisboa.pt}
 
 Authors:
 \itemize{
   \item Jorge Cadima \email{jcadima@isa.ulisboa.pt}
-  \item Elsa Gonçalves \email{elsagoncalves@isa.ulisboa.pt}
+  \item Elsa Gon<U+00E7>alves \email{elsagoncalves@isa.ulisboa.pt}
 }
 
 }

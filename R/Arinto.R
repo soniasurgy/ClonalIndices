@@ -1,19 +1,33 @@
 #' Arinto variety dataset
 #'
-#' A dataset containing the Empirical Best Linear Unbiased Predictors (EBLUP) of genotypic effects and the predicted values obtained by the fitting of linear mixed models with the observations from  selection field trials of variety Arinto.
+#' A dataset containing genotypic information for a set of grapevine clones of the Arinto variety, obtained from selection field trials. The dataset comprises Empirical Best Linear Unbiased Predictors (EBLUPs) of genotypic effects and predicted values obtained from linear mixed models fitted to the trial observations.
 #'
+#'@details
+#' The dataset is provided as an example for the application of
+#' the selection indices implemented in the ClonalIndices package.
+#' It contains the genotypic EBLUPs and predicted values for five
+#' traits: yield, total soluble solids, total acidity, berry weight
+#' and pH.
 #'
-#'  \describe{
-#'    \item{Clone}{the genotype label}
-#'    \item{ydblup}{EBLUP of the genotypic effect of yield}
-#'    \item{tssblup}{EBLUP of the genotypic effect of total soluble solids}
-#'    \item{tablup}{EBLUP of the genotypic effect of total acidity}
-#'    \item{bwblup}{EBLUP of the genotypic effect of berry weight}
-#'    \item{phblup}{EBLUP of the genotypic effect of pH}
-#'    \item{ydpred}{Predicted values of yield}
-#'    \item{tsspred}{Predicted values of total soluble solids}
-#'    \item{tapred}{Predicted values of total acidity}
-#'    \item{bwpred}{Predicted values of berry weight}
-#'    \item{phpred}{Predicted values of pH}
-#'  }
+#' The following list describes the names and nature of the columns
+#' included in the data frame:
+#'
+#' \describe{
+#'   \item{Clone}{Genotype label identifying each clone.}
+#'   \item{ydblup}{EBLUP of the genotypic effect for yield.}
+#'   \item{tssblup}{EBLUP of the genotypic effect for total soluble solids.}
+#'   \item{tablup}{EBLUP of the genotypic effect for total acidity.}
+#'   \item{bwblup}{EBLUP of the genotypic effect for berry weight.}
+#'   \item{phblup}{EBLUP of the genotypic effect for pH.}
+#'   \item{ydpred}{Predicted value for yield.}
+#'   \item{tsspred}{Predicted value for total soluble solids.}
+#'   \item{tapred}{Predicted value for total acidity.}
+#'   \item{bwpred}{Predicted value for berry weight.}
+#'   \item{phpred}{Predicted value for pH.}
+#' }
+#'
+#' @source
+#' Data obtained from grapevine selection field trials involving
+#' the Arinto variety.
+#'
 "Arinto"
