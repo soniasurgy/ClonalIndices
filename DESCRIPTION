@@ -1,7 +1,7 @@
 Package: ClonalIndices
 Type: Package
 Title: Clonal Selection Indices Using Genotypic Values
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person(given = "Sónia", family = "Surgy", email = "soniasurgy@isa.ulisboa.pt", role = c("aut", "cre")),
     person(given = "Jorge", family = "Cadima", email = "jcadima@isa.ulisboa.pt", role = c("aut")),

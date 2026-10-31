@@ -1,6 +1,15 @@
 #' Indices Calculation
 #'
-#' This function implements the following indices: BSI, SSI, ESI and MSI
+#' This function implements the following genotypic selection indices: Balanced selection index (BSI), Multiplicative Balanced Selection Index (MBSI), Adapted Smith Selection Index (SSI), Adapted Elston Selection Index (ESI) and Adapted Mulamba & Mock Selection Index (MSI).
+#'
+#' Two indices, BSI and MBSI, were newly developed for clonal selection, while SSI, ESI and MSI are adaptations of existing selection indices for use with genotypic data.
+#'
+#' For more information about these indices see 'README' file.
+#'
+#' @details
+#' The BSI and MBSI are original indices developed for the selection of superior clones based on genotypic values. The SSI, ESI and MSI are adaptations of previously established selection indices to accommodate genotypic data obtained from mixed models.
+#'
+#'The function allows the calculation of individual indices, as well as the comparison of clone rankings across all implemented indices.
 #'
 #' @param blups A vector with the names of the columns in the data corresponding to the predictors of the target traits. Needed for 'indextype' 'bsi', 'mbsi', 'ssi' and 'msi'.
 #' @param preds A vector with the names of the columns in the data corresponding to the predicted values of the target traits. Needed for 'indextype' 'esi'.
@@ -8,7 +17,7 @@
 #' @param clnum An integer specifying the number of top clones to be seen in the output. If omitted, equal to the total number of clones.
 #' @param meanvec A named numeric vector of trait means; if omitted, data are assumed to be already normalized by the mean. Not used for 'esi'.
 #' @param criteria A named numeric vector indicating the selection criterion for each trait: 1 for traits to be increased, -1 for traits to be decreased. If omitted, all traits are assumed to be selected for increase.
-#' @param indextype A string indicating the selection index to be calculated. 'bsi' for Balanced selection index, 'ssi' for the Adapted Smith selection index, 'msi' for the Adapted Mulamba & Mock selection index, or 'esi' for the Adapted Elston selection index . If omitted, 'bsi' is calculated. For more information about these indices see 'README' file.
+#' @param indextype A string indicating the selection index to be calculated. 'bsi' for Balanced selection index, 'mbsi' for Multiplicative Balanced Selection Index, 'ssi' for the Adapted Smith selection index, 'msi' for the Adapted Mulamba & Mock selection index, or 'esi' for the Adapted Elston selection index . If omitted, 'bsi' is calculated.
 #' @param data A data frame comprising the input data consisting of the EBLUPs of genotypic effects and/or the predicted values obtained by the fitting of the mixed models, which serve as the basis for the selection procedure.
 #'
 #' @return
@@ -16,6 +25,17 @@
 #'  - `ranking`  with the top 'clnum' clones in the index mentioned in 'indextype' and the corresponding index value
 #'  - `rankall`  with the top 'clnum' clones in all indices and the corresponding index value
 #'  - `rankglobal` with index value and rank position for each clone in all indices
+#'
+#' @references
+#' Smith, H., 1936. A discriminant function for plant selection. Ann. Eugen, Volume 7, pp. 240-250.
+#'
+#' Elston, R., 1963. A weight-free index for the purpose of ranking or selection with respect to several traits at a time. Biometrics, Volume 19, pp. 85-97.
+#'
+#' Mulamba, N. N. and Mock, J., 1978. Improvement of yield potential of the ETO blanco maize (Zea mays L.) population by breeding for plant traits. Egyptian Journal of Genetics and Cytology, Volume 7, pp. 40-57.
+#'
+#' Smith, H., 1936. A discriminant function for plant selection. Ann. Eugen, Volume 7, pp. 240-250.
+#'
+#'
 #'
 #' @export
 #'
@@ -119,12 +139,12 @@ indextype <- match.arg(indextype)
     mbsicols <- ncol(indexmbsi)
     indexmbsi$numer <- rep(1, indexrow)
     indexmbsi$denom <- rep(1, indexrow)
-    
-    for (i in 1:indexrow){  
+
+    for (i in 1:indexrow){
       for (j in 2:mbsicols){
-        
+
         valor <- indexmbsi[[j]][i]
-        
+
         if (valor >= 0){
           indexmbsi$numer[i] <- indexmbsi$numer[i] * (abs(valor)+1)
         }else{
@@ -135,17 +155,17 @@ indextype <- match.arg(indextype)
     indexmbsi$MBSI <- indexmbsi$numer/indexmbsi$denom
     indexmbsi$MBSIrank <- rank(-indexmbsi$MBSI, ties.method = "first")
     indexordmbsi <- indexmbsi[order(indexmbsi$MBSI, decreasing = TRUE),, drop = FALSE]
-    
+
     # Object all
 
     indexall$Ref.MBSI <- indexordmbsi[1:clnum, 1]
     indexall$MBSI <- indexordmbsi$MBSI[1:clnum]
-    
+
     # object global
-    
+
     indexglobal$MBSI = indexmbsi$MBSI
     indexglobal$MBSIrank = indexmbsi$MBSIrank
-    
+
 
 
   # SSI
