@@ -1,7 +1,6 @@
-#' ClonalIndices: Clonal Selection Indices Using Genotypic Values
+#' ClonalIndices: Clonal Selection Indices Based on Predicted Genotypic Effects
 #'
-#' Tools for computing selection indices based on genotypic values,
-#' with emphasis on clonal selection.
+#' Tools for computing selection indices based on predicted genotypic effects, with emphasis on clonal selection.
 #'
 #' The package implements one newly developed index and several adaptations
 #' of existing selection indices for use with genotypic data. The indices are a newly Balanced selection index (BSI), a newly Multiplicative Balanced selection index (MBSI)an Adapted Smith selection index (SSI), an Adapted Mulamba & Mock selection index (MSI), and an Adapted Elston selection index (ESI). For more information about these indices see 'README' file.
