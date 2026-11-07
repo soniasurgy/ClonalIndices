@@ -1,7 +1,6 @@
 ClonalIndices
 ================
 
-# ClonalIndices
 
 The `ClonalIndices` package provides computational tools for clonal
 selection based on predicted genotypic effects. It implements a set of
