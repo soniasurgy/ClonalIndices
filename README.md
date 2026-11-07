@@ -40,7 +40,7 @@ preparation).
 
 Elston, R., 1963. A weight-free index for the purpose of ranking or
 selection with respect to several traits at a time. Biometrics, Volume
-19, pp. 85-97.
+19, pp. 85-97.
 
 Mulamba, N. N. and Mock, J., 1978. Improvement of yield potential of the
 ETO blanco maize (Zea mays L.) population by breeding for plant traits.
@@ -261,4 +261,5 @@ This package is released under the GPL-3 License.
 
 For suggestions, and bug reports use the link:
 
-<https://github.com/soniasurgy/ClonalIndices/issues>
+https://github.com/soniasurgy/ClonalIndices/issues
+

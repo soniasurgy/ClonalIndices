@@ -4,10 +4,9 @@
 \name{ClonalIndices-package}
 \alias{ClonalIndices}
 \alias{ClonalIndices-package}
-\title{ClonalIndices: Clonal Selection Indices Using Genotypic Values}
+\title{ClonalIndices: Clonal Selection Indices Based on Predicted Genotypic Effects}
 \description{
-Tools for computing selection indices based on genotypic values,
-with emphasis on clonal selection.
+Tools for computing selection indices based on predicted genotypic effects, with emphasis on clonal selection.
 }
 \details{
 The package implements one newly developed index and several adaptations
@@ -28,12 +27,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: S<U+00F3>nia Surgy \email{soniasurgy@isa.ulisboa.pt}
+\strong{Maintainer}: Sónia Surgy \email{soniasurgy@isa.ulisboa.pt}
 
 Authors:
 \itemize{
   \item Jorge Cadima \email{jcadima@isa.ulisboa.pt}
-  \item Elsa Gon<U+00E7>alves \email{elsagoncalves@isa.ulisboa.pt}
+  \item Elsa Gonçalves \email{elsagoncalves@isa.ulisboa.pt}
 }
 
 }

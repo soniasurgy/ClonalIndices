@@ -1,13 +1,13 @@
 Package: ClonalIndices
 Type: Package
 Title: Clonal Selection Indices Based on Predicted Genotypic Effects
-Version: 1.0.1
+Version: 1.0.0
 Authors@R: c(
     person(given = "Sónia", family = "Surgy", email = "soniasurgy@isa.ulisboa.pt", role = c("aut", "cre")),
     person(given = "Jorge", family = "Cadima", email = "jcadima@isa.ulisboa.pt", role = c("aut")),
     person(given = "Elsa", family = "Gonçalves", email = "elsagoncalves@isa.ulisboa.pt", role = c("aut"))
     )
-Description: This package provides functions to compute selection indices for clonal selection based on predicted genotypic effects. It enables the evaluation and ranking of clones, supporting decision-making in clonal selection processes.
+Description: Provides functions to compute selection indices for clonal selection based on predicted genotypic effects. It enables the evaluation and ranking of clones, supporting decision-making in clonal selection processes.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -21,7 +21,6 @@ Suggests:
     roxygen2,
     devtools,
     usethis
-VignetteBuilder: knitr
 Depends: 
     R (>= 3.5.0)
 LazyData: true
